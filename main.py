@@ -14,21 +14,20 @@ class Calculator:
 
 
 class TestCalculator(TestCase):
+    def setUp(self):
+        self.calculator = Calculator()
+
     def testSum(self):
-        calculator = Calculator()
-        assert calculator.sum(2, 3) == 5
+        assert self.calculator.sum(2, 3) == 5
 
     def testMultiplication(self):
-        calculator = Calculator()
-        assert calculator.multiply(2, 3) == 6
+        assert self.calculator.multiply(2, 3) == 6
 
     def testDivision(self):
-        calculator = Calculator()
-        assert calculator.divide(6, 3) == 2
+        assert self.calculator.divide(6, 3) == 2
 
     def testWrongSum(self):
-        calculator = Calculator()
-        assert calculator.sum(1, 1) == 3  # false assertion
+        assert self.calculator.sum(1, 1) == 3  # false assertion
 
 
 if __name__ == "__main__":
